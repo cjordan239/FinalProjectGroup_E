@@ -1,13 +1,17 @@
-import Home from "@/components/Home";
+import ContactUs from "@/components/ContactUs";
 import Footer from '@/components/Footer';
 import Navbar from "@/components/Navbar";
 
-export default function homePage() {
+import React from 'react';
+
+const contactPage = () => {
   return (
     <>
       {/* <Navbar></Navbar> */}
-      <Home></Home>
+      <ContactUs></ContactUs>
       <Footer></Footer>
     </>
   );
-}
+};
+
+export default contactPage;
