@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import { links } from '@/components/lib/data';
 import { Button } from '@mui/material';

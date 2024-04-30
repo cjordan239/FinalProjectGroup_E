@@ -7,7 +7,7 @@ const loginPage = () => {
     return (
         <>
             <Login/>
-            {/* <Footer/> */}
+            <Footer/>
         </>
     );
 };

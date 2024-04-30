@@ -8,14 +8,11 @@ export default function loginLayout({
 }>) {
   return (
     
-    <html lang="en">
-      <body>
+    <>
       
         {children}
         
-
-      </body>
-    </html>
+    </>
 
   );
 }
