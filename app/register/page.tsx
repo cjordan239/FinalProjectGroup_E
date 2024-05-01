@@ -1,3 +1,5 @@
+"use client"
+
 import Registration from "@/components/Register";
 import Footer from '@/components/Footer'
 

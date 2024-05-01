@@ -18,9 +18,10 @@ const Login= () => {
 
   const handleSubmit = async (values: LoginData) => {
     try {
-      const response = await axios.post('/api/login', values);
+      const response = await axios.post('https://groupebackendrevou-development.up.railway.app/login', values);
       console.log(response.data); // Log the response from the server
-      response.status === 200 ? router.push('/dashboard') 
+      response.status === 200 
+      ? router.push('/dashboard') 
       : console.error('Login failed:', response.data.error && router.push('/login')); // redirect to dasboard if succed login else console eror and refresh the page
     
     } catch (error) {
