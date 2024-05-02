@@ -5,15 +5,11 @@ import { Formik, Form, Field, ErrorMessage, useFormik} from 'formik';
 import {useRouter}  from 'next/navigation';
 import { loginUser } from '@/app/api/authApi';
 import LoginSchema from '../utils/LoginSchema';
-import axios from 'axios';
+import { LoginData, LoginFormProps } from '@/app/interface/user';
 import { TextField, Button, Box, Container, Typography, Grid } from '@mui/material';
 
-interface LoginData {
-    email: string;
-    password: string;
-}
 
-const Login: React.FC = () => {
+const Login: React.FC<LoginFormProps> = ( { onLoginSuccess } ) => {
   
   const router = useRouter()
 
@@ -26,11 +22,9 @@ const Login: React.FC = () => {
     onSubmit: async (values: LoginData) => {
       try {
         const response = await loginUser(values);
-        const token = response.data.token;
-        if (token !== undefined) {
-          localStorage.setItem('token', token);
-        };
-        router.push('/dashboard')
+        const token = response.access_token;
+        onLoginSuccess(token);
+        
       } catch (error) {
         console.error("Registration failed", error);
       }

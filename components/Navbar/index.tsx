@@ -4,15 +4,20 @@ import React from 'react';
 import { links } from '@/components/lib/data';
 import { Button } from '@mui/material';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/app/context/AuthContext';
+
 
 const Navbar = () => {
-
+    
+    const { isAuthenticated, login, logout } = useAuth();
+    console.log(isAuthenticated)
     const router = useRouter()
     const handleClick = () => {  
 
         router.push('/register')
         
     };
+
 
     return (
         <nav className='bg-white py-12 flex items-center justify-between rounded-lg shadow-md '>
@@ -27,14 +32,23 @@ const Navbar = () => {
                     </Button>
                 ))}
             </div>
-
-            <Button
+            {isAuthenticated 
+            ? <Button
+                variant="contained"
+                className='text-black mr-12'
+                onClick={logout}
+            >
+                Logout </Button>
+            
+            : <Button
                 variant="contained"
                 className='text-black mr-12'
                 onClick={handleClick}
             >
-                Login
-            </Button>
+                Login </Button> 
+            }
+            
+            
         </nav>
     );
 };
