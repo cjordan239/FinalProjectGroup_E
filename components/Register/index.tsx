@@ -15,6 +15,10 @@ interface RegistrationData {
 
 const Registration: React.FC = () => {
   const router = useRouter();
+  
+  const handleLoginRedirect = () => {
+    router.push('/login'); // Replace '/login' with the path to your login page
+  }
 
   const formik = useFormik({
     initialValues: {
@@ -82,6 +86,15 @@ const Registration: React.FC = () => {
                 Register
               </Button>
             </form>
+            <div className="mt-4">
+              Already have an account? 
+              <span 
+                onClick={handleLoginRedirect} 
+                className="ml-2 text-blue-500 cursor-pointer"
+              >
+                Log in
+              </span>
+            </div>
           </div>
         </Box>
       </Container>

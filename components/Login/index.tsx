@@ -10,8 +10,6 @@ import { TextField, Button, Box, Container, Typography, Grid } from '@mui/materi
 
 
 const Login: React.FC<LoginFormProps> = ( { onLoginSuccess } ) => {
-  
-  const router = useRouter()
 
   const formik = useFormik({
     initialValues: {
