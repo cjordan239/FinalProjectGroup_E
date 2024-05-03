@@ -12,12 +12,12 @@ const loginPage = () => {
 
     const handleLoginSuccess = (token: string) => {
         login(token);
-        router.push('/dashboard')
-      };
+        router.push('/donate')
+    };
     return (
         <>
-            <Login onLoginSuccess={handleLoginSuccess}/>
-            <Footer/>
+            <Login onLoginSuccess={handleLoginSuccess} />
+            <Footer />
         </>
     );
 };

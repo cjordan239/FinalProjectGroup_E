@@ -1,12 +1,12 @@
-import Dasboard from '@/components/Dashboard';
+import Donate from '@/components/Donate';
 import React from 'react';
 
-const dashboardPage = () => {
+const donatePage = () => {
     return (
         <div>
-            <Dasboard/>
+            <Donate />
         </div>
     );
 };
 
-export default dashboardPage;
+export default donatePage;

@@ -1,30 +1,30 @@
 import React from "react";
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from "@mui/material";
 
 const About = () => {
   return (
     <>
       <Container
         sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          height: '100%',
+          display: "flex",
+          flexDirection: "row",
+          height: "100%",
         }}
         component="main"
         maxWidth="xl"
       >
         <Box
           sx={{
-            width: '50%',
-            margin: 10,
-            boxSizing: 'border-box',
+            width: "50%",
+            margin: "7rem",
+            boxSizing: "border-box",
           }}
           component="article"
         >
           <Typography fontWeight={700} mb={3} component="h1" variant="h2">
             About
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }} mb={3} component="h2" variant="h6">
+          <Typography sx={{ color: "text.secondary" }} mb={3} component="h2" variant="h6">
             Suheading
           </Typography>
           <Typography mb={3} component="p">
@@ -33,19 +33,19 @@ const About = () => {
         </Box>
         <Box
           sx={{
-            width: '50%',
-            display: 'flex',
-            boxSizing: 'border-box',
-            alignContent: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            flexWrap: 'wrap'
+            width: "50%",
+            display: "flex",
+            boxSizing: "border-box",
+            alignContent: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            flexWrap: "wrap"
           }}>
           <Typography
             sx={{
-              display: 'flex',
+              display: "flex",
               fontWeight: 700,
-              flexDirection: 'row'
+              flexDirection: "row"
             }}
             component="h1"
             variant="h1">

@@ -2,14 +2,14 @@ import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 
-const Dasboard = () => {
+const Donate = () => {
     return (
         <div>
-            <Navbar/>
+            <Navbar />
 
-            <Footer/>
+            <Footer />
         </div>
     );
 };
 
-export default Dasboard;
+export default Donate;
