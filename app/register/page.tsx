@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 import React from 'react';
 
-const registrationPage = () => {
+const RegistrationPage = () => {
     return (
         <>
         
@@ -16,4 +16,4 @@ const registrationPage = () => {
     );
 };
 
-export default registrationPage;
+export default RegistrationPage;

@@ -6,7 +6,7 @@ import { useAuth } from '@/app/context/AuthContext';
 import { useRouter } from 'next/navigation';
 
 
-const loginPage = () => {
+const LoginPage = () => {
     const { isAuthenticated, login, logout } = useAuth();
     const router = useRouter();
 
@@ -22,4 +22,4 @@ const loginPage = () => {
     );
 };
 
-export default loginPage;
+export default LoginPage;
