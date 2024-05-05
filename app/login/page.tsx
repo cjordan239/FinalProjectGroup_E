@@ -6,7 +6,7 @@ import { useAuth } from '@/app/context/AuthContext';
 import { useRouter } from 'next/navigation';
 
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
     const { isAuthenticated, login, logout } = useAuth();
     const router = useRouter();
 
