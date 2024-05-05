@@ -66,7 +66,7 @@ const ContactUs: React.FC = () => {
           Contact Us
         </Typography>
         <Typography sx={{ color: "text.secondary" }} component="h2" variant="h6">
-          Have anything to ask us? Drop your question below and we"ll send you an email!
+          Have anything to ask us? Drop your question below and we'll send you an email!
         </Typography>
         <div className="w-full">
           <form onSubmit={formik.handleSubmit} className="mt-8 space-y-6">
