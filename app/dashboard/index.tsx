@@ -4,7 +4,7 @@ import React from 'react';
 const donatePage = () => {
     return (
         <div>
-            <Donate />
+            {/* <Donate /> */}
         </div>
     );
 };

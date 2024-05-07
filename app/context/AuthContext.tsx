@@ -11,6 +11,7 @@ const AuthProvider : React.FC <AuthProviderProps>  = ({children}) => {
 
     const router = useRouter();
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [amount, setAmount] = useState<number>(0)
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -30,8 +31,10 @@ const AuthProvider : React.FC <AuthProviderProps>  = ({children}) => {
         setIsAuthenticated(false);
         router.push('/login')
       };
+
     
-    
+     
+
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
         {children}

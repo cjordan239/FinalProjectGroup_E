@@ -15,6 +15,6 @@ export const links = [
   },
   {
     name: "Donate",
-    hash: "/donate",
+    hash: "/donation",
   },
 ] as const

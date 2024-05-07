@@ -13,6 +13,9 @@ const RegistrationSchema = Yup.object().shape({
         'The password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit, and be at least 8 characters long.'
     )
         .required('Password is required'),
+    realname: Yup.string().required('realname is required'),
+    address: Yup.string().required('address is required'),
+    occupation: Yup.string().required('occupation is required'),
 });
 
 export default RegistrationSchema;

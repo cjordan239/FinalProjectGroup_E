@@ -12,7 +12,7 @@ const LoginPage: React.FC = () => {
 
     const handleLoginSuccess = (token: string) => {
         login(token);
-        router.push('/donate')
+        router.push('/donation')
     };
     return (
         <>
