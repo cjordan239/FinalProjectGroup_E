@@ -1,52 +1,59 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getProfile } from '@/app/api/authApi';
-import { UserProfile } from "@/app/interface/user";
-
+import { useAuth } from '@/app/context/AuthContext';
+import { UserProfile } from '@/app/interface/context';
 
 const Profile = () => {
  
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const {isAuthenticated} = useAuth()
+  const [profile, setProfile] = useState<UserProfile | undefined>(undefined);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProfile = async () => {
       try {
-        const token = localStorage.getItem('token');
-        if (token) {
-          const response = await getProfile({
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          });
-          setUserProfile(response);
-        } else {
-          console.error('Token not found in local storage');
+        if (isAuthenticated) {
+          const token = localStorage.getItem('token');
+          if (token) {
+            const response = await getProfile(token);
+            setProfile(response.user);
+            console.log(response)
+          }
         }
       } catch (error) {
-        console.error('Error fetching profile:', error);
+        console.error('Fetch categories failed', error);
       }
     };
 
-    fetchData();
-  }, []);
+    fetchProfile();
+  }, [isAuthenticated]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //   const response = getProfile(profile)           
+  //   };
+
+  //   fetchData();
+  // }, []);
+
 
   return (
     <div>
       <h1>Profile</h1>
-      {userProfile ? (
+      {profile ? (
         <div>
-          <p>Username: {userProfile.username}</p>
-          <p>Email: {userProfile.email}</p>
-          <p>Real Name: {userProfile.realname}</p>
-          <p>Address: {userProfile.address}</p>
-          <p>Occupation: {userProfile.occupation}</p>
+          <p>Username: {profile.username}</p>
+          <p>Email: {profile.email}</p>
+          <p>Real Name: {profile.realname}</p>
+          <p>Address: {profile.address}</p>
+          <p>Occupation: {profile.occupation}</p>
         </div>
       ) : (
         <p>Loading...</p>
       )}
     </div>
   );
-  
 }
+
 export default Profile;

@@ -12,18 +12,25 @@ export const loginUser = async (data: { email: string; password: string }) => {
   return response.data;
 };
 
-export const getProfile = async (options: any) => {
-  const response = await axios.get(`${API_BASE_URL}/current-user/data`, options);
+export const getProfile = async (token: string) => {
+  const response = await axios.get(`${API_BASE_URL}/current-user/data`, { headers: { Authorization: `Bearer ${token}` } });
   return response.data;
-}
+};
+export const donateUser = async (data: any) => {
+  try {
+    const token = localStorage.getItem('token'); 
+    if (!token) {
+      throw new Error('JWT token not found in local storage');
+    }
 
-export const donationUser = async ( data: { nominal: number; from_id: number;}) => {
-  const response = await axios.post(`${API_BASE_URL}/donations`, data);
-  return response.data;
-}
+    const response = await axios.post(`${API_BASE_URL}/donations/current-user`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`, 
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 
-// export const createProfile = async ( data: { realname: string; address: string occupation: string }) => {
-//   const response = await axios.get(`${API_BASE_URL}/profiles`, data);
-//   return response.data;
-// }
-  

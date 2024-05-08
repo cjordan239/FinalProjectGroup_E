@@ -6,7 +6,7 @@ import RegistrationSchema from "../utils/RegistrationSchema";
 import { registerUser } from "@/app/api/authApi";
 import { useRouter } from "next/navigation";
 import { Button, Container } from "@mui/material";
-import { RegistrationData } from "@/app/interface/user";
+import { RegistrationData } from "@/app/interface/context";
 
 const Registration: React.FC = () => {
   const router = useRouter();

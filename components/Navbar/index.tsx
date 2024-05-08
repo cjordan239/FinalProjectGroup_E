@@ -10,7 +10,6 @@ import { useAuth } from "@/app/context/AuthContext";
 const Navbar = () => {
 
     const { isAuthenticated, login, logout } = useAuth();
-    console.log(isAuthenticated)
     const router = useRouter()
     const handleClick = () => {
 

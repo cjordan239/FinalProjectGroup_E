@@ -19,7 +19,7 @@ const donationPage: React.FC = () => {
   return (
     
     <div>
-      {/* <Donate/>        */}
+      <Donate/>       
     </div>
   )
 }

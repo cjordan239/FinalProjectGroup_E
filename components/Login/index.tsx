@@ -3,9 +3,9 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
-import { loginUser } from "@/app/api/authApi";
+import { getProfile, loginUser } from "@/app/api/authApi";
 import LoginSchema from "../utils/LoginSchema";
-import { LoginData, LoginFormProps } from "@/app/interface/user";
+import { LoginData, LoginFormProps } from "@/app/interface/context";
 import { Button, Container, Typography, Grid } from "@mui/material";
 
 // TestingApp1234@gmail.com
@@ -28,27 +28,13 @@ const Login: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
       try {
         const response = await loginUser(values);
         const token = response.access_token;
-        onLoginSuccess(token);
-
+        onLoginSuccess(token); 
       } catch (error) {
         console.error("Login failed", error);
       }
     },
   });
 
-
-  // const handleSubmit = async (values: LoginData) => {
-  //   try {
-  //     const response = await axios.post("https://groupebackendrevou-development.up.railway.app/login", values);
-  //     console.log(response.data); // Log the response from the server
-  //     response.status === 200 
-  //     ? router.push("/dashboard") 
-  //     : console.error("Login failed:", response.data.error && router.push("/login")); // redirect to dasboard if succed login else console eror and refresh the page
-
-  //   } catch (error) {
-  //     console.error("Login failed:", error);
-  //   }
-  // };
 
   return (
     <Container className="flex justify-center items-center" component="main" maxWidth="xl">
