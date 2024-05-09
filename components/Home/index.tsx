@@ -1,15 +1,15 @@
 "use client"
 import React from "react";
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 import { Button, Box, Container, Typography } from '@mui/material';
+import hungerFree from "../Image/hungerFree.svg"
 
 const Home = () => {
 
   const router = useRouter()
   const handleClick = () => {
-
     router.push('/about')
-
   };
 
   return (
@@ -22,11 +22,26 @@ const Home = () => {
           alignContent: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
+          paddingTop: "7.5rem",
+          minHeight: "90vh",
         }}
         component="main"
         maxWidth="xl"
       >
+        <Box
+          sx={{
+            width: '100%',
+            height: 'auto'
+          }}>
+          <Image
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+            src={hungerFree} alt="Free Hunger" />
+        </Box>
+
         <Box
           sx={{
             width: '100%',
@@ -45,21 +60,6 @@ const Home = () => {
           >
             More Information
           </Button>
-        </Box>
-        <Box
-          sx={{
-            width: '100%',
-          }}>
-          <Typography
-            sx={{
-              display: 'flex',
-              fontWeight: 700,
-              justifyContent: 'center'
-            }}
-            component="h1"
-            variant="h1">
-            Insert Promo Image
-          </Typography>
         </Box>
       </Container>
     </>

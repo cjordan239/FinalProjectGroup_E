@@ -1,10 +1,11 @@
 "use client"
 import React from "react";
-import { useFormik, Formik, Form, Field, ErrorMessage } from "formik";
+import { useFormik } from "formik";
 import ContactSchema from "../utils/ContactSchema";
-import axios from "axios";
 import { useRouter } from "next/navigation";
-import { TextField, Button, Box, Container, Typography } from "@mui/material";
+import { Button, Box, Container, Typography } from "@mui/material";
+import Image from "next/image";
+import contact from "../Image/contact.jpg";
 
 interface ContactData {
   name: string;
@@ -50,7 +51,10 @@ const ContactUs: React.FC = () => {
         display: "flex",
         flexDirection: "row",
         height: "100%",
-
+        paddingTop: "7.5rem",
+        minHeight: "90vh",
+        alignItems: "center",
+        marginBottom: "1rem"
       }}
       component="main"
       maxWidth="xl"
@@ -58,7 +62,7 @@ const ContactUs: React.FC = () => {
       <Box
         sx={{
           width: "50%",
-          margin: "0 6rem 5rem 6rem",
+          margin: "0 6rem",
           boxSizing: "border-box",
         }}
       >
@@ -68,6 +72,7 @@ const ContactUs: React.FC = () => {
         <Typography sx={{ color: "text.secondary" }} component="h2" variant="h6">
           Have anything to ask us? Drop your question below and we will send you an email!
         </Typography>
+
         <div className="w-full">
           <form onSubmit={formik.handleSubmit} className="mt-8 space-y-6">
             <Box>
@@ -127,6 +132,7 @@ const ContactUs: React.FC = () => {
           </form>
         </div>
       </Box>
+
       <Box
         sx={{
           width: "50%",
@@ -134,19 +140,16 @@ const ContactUs: React.FC = () => {
           boxSizing: "border-box",
           alignContent: "center",
           justifyContent: "center",
-          textAlign: "center",
           flexWrap: "wrap"
         }}>
-        <Typography
-          sx={{
-            display: "flex",
-            fontWeight: 700,
-            flexDirection: "row"
+        <Image
+          style={{
+            width: 'auto',
+            height: '90%',
+            maxHeight: "60vh",
+            borderRadius: "15px"
           }}
-          component="h1"
-          variant="h1">
-          Insert Promo Image
-        </Typography>
+          src={contact} alt="Contact Us" />
       </Box>
     </Container >
   );

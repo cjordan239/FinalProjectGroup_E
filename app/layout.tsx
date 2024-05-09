@@ -21,11 +21,10 @@ export default function RootLayout({
 
   return (
     <AuthProvider>
-      
+
       <html lang="en">
-        <body className={inter.className}>
-          <Navbar/>
-          
+        <body className={`${inter.className} flex flex-col items-center min-h-screen`}>
+          <Navbar />
           {children}
           <Footer />
         </body>

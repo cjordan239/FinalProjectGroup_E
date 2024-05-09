@@ -2,9 +2,10 @@
 
 import React from "react";
 import { links } from "@/components/lib/data";
-import { Button} from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/app/context/AuthContext";
+import Image from "next/image";
+import logo from "../Image/logo.png";
 
 
 const Navbar = () => {
@@ -13,37 +14,42 @@ const Navbar = () => {
     const router = useRouter()
     const handleClick = () => {
 
-        router.push("/register")
+        router.push("/login")
 
     };
 
 
     return (
-        <nav className="py-12 flex flex-row items-center justify-between text-center">
+        <nav className="fixed bg-white pt-10 pb-4 flex flex-row items-center justify-between text-center w-full">
             <div className="ml-16">
-                <p className="font-bold text-2xl font-serif text-black">LOGO</p>
+                <Image
+                    style={{
+                        width: 'auto',
+                        height: '4rem',
+                    }}
+                    src={logo} alt="Compasstio Logo" />
             </div>
 
             <div className="mr-16 flex flex-row space-x-7">
                 <div className="flex flex-row items-center space-x-7">
                     {links.map(nav => (
-                        <Button href={nav.hash} key={nav.name}>
+                        <button className="font-semibold text-lg text-black capitalize" onClick={() => window.location.href = nav.hash} key={nav.name}>
                             {nav.name}
-                        </Button>
+                        </button>
                     ))}
                 </div>
                 {isAuthenticated
-                    ? <Button
-                        variant="contained"
+                    ? <button
+                        className="bg-black font-semibold text-lg text-white capitalize py-3 px-5 rounded-lg"
                         onClick={logout}
                     >
-                        Logout </Button>
+                        Logout </button>
 
-                    : <Button
-                        variant="contained"
+                    : <button
+                        className="bg-black font-semibold text-lg text-white capitalize py-3 px-5 rounded-lg"
                         onClick={handleClick}
                     >
-                        Login </Button>
+                        Login </button>
                 }
             </div>
 

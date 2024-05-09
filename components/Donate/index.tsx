@@ -1,9 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
-import { Button, Container } from "@mui/material";
+import { Button, Container, Box, Typography } from "@mui/material";
 import { donateUser } from "@/app/api/authApi";
 import DonationSchema from "../utils/DonationSchema";
-import { useAuth } from "@/app/context/AuthContext";
+import Image from "next/image";
+import donation from "../Image/donation.jpg";
 
 const Donate = () => {
   const [donateAmount, setDonationAmount] = useState(0);
@@ -27,22 +28,59 @@ const Donate = () => {
   return (
     <>
       <Container
-        className="flex justify-center items-center"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          paddingTop: "7.5rem",
+          minHeight: "90vh",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
         component="main"
         maxWidth="xl"
       >
-        <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="flex justify-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-              Make a Donation
-            </h1>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+            marginBottom: "4rem",
+          }}
+        >
+          <Typography fontWeight={700} mb={3} component="h1" variant="h2">
+            Make a Donation!
+          </Typography>
+          <Typography sx={{ color: "text.secondary" }} component="h3" variant="h6">
+            Together, we can create a world where every person has access to nutritious food and the opportunity to thrive.
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            maxWidth: "80%"
+          }}
+        >
+          <Box
+            sx={{
+              width: "50%",
+              margin: "0 6rem 0 3rem",
+              boxSizing: "border-box",
+            }}
+          >
             <form
               onSubmit={formik.handleSubmit}
               className="space-y-4 md:space-y-6"
             >
+              <Typography sx={{ color: "text.secondary" }} component="h2" variant="h6">
+                Please enter your donation information
+              </Typography>
               <div>
                 <label className="block mb-2 text-base font-bold text-gray-900">
-                  Nominal
+                  Nominal (Rupiah)
                 </label>
                 <input
                   type="number"
@@ -69,8 +107,27 @@ const Donate = () => {
                 Donate
               </Button>
             </form>
-          </div>
-        </div>
+          </Box>
+
+          <Box
+            sx={{
+              width: "50%",
+              display: "flex",
+              boxSizing: "border-box",
+              alignContent: "center",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}>
+            <Image
+              style={{
+                width: 'auto',
+                height: '90%',
+                borderRadius: "15px"
+              }}
+              src={donation} alt="Donation Box" />
+          </Box>
+
+        </Box>
       </Container>
     </>
   );
