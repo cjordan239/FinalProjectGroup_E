@@ -88,7 +88,7 @@ const About = () => {
             We have Noble Goals
           </Typography>
           <Typography mb={3} component="p">
-            Hunger is a multifaceted issue with profound implications for individuals, communities, and societies as a whole. Our planet has provided us with tremendous resources, but unequal access and inefficient handling leaves millions of people malnourished. Moreover, malnutrition undermines children's ability to learn and thrive, robbing them of the opportunity to reach their full potential. By addressing hunger, we can unlock the door to a brighter future for generations to come.
+            Hunger is a multifaceted issue with profound implications for individuals, communities, and societies as a whole. Our planet has provided us with tremendous resources, but unequal access and inefficient handling leaves millions of people malnourished. Moreover, malnutrition undermines children’s ability to learn and thrive, robbing them of the opportunity to reach their full potential. By addressing hunger, we can unlock the door to a brighter future for generations to come.
           </Typography>
         </Box>
 
@@ -106,7 +106,7 @@ const About = () => {
             Get Involved with Us
           </Typography>
           <Typography mb={3} component="p">
-            Join us in our mission to end hunger and build a brighter future for all. Whether you're interested in volunteering, fundraising, or spreading awareness, there are countless ways to make a difference. Together, we can create a world where every person has access to nutritious food and the opportunity to thrive.
+            Join us in our mission to end hunger and build a brighter future for all. Whether you are interested in volunteering, fundraising, or spreading awareness, there are countless ways to make a difference. Together, we can create a world where every person has access to nutritious food and the opportunity to thrive.
           </Typography>
           <Button variant="contained" endIcon={<KeyboardDoubleArrowRightOutlinedIcon />} onClick={handleClick}>
             Donate Now
