@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Button, Container, Box } from "@mui/material";
 import { RegistrationData } from "@/app/interface/context";
 import Image from "next/image";
-import joinUs from "../Image/joinUs.jpg";
+import register from "../Image/register.jpg";
 
 const Registration: React.FC = () => {
   const router = useRouter();
@@ -221,7 +221,7 @@ const Registration: React.FC = () => {
             height: '90%',
             borderRadius: "15px"
           }}
-          src={joinUs} alt="Join Us" />
+          src={register} alt="Register" />
       </Box>
     </Container>
   );
