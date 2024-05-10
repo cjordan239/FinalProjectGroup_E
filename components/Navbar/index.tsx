@@ -33,7 +33,7 @@ const Navbar = () => {
             <div className="mr-16 flex flex-row space-x-7">
                 <div className="flex flex-row items-center space-x-7">
                     {links.map(nav => (
-                        <button className="font-semibold text-lg text-black capitalize" onClick={() => window.location.href = nav.hash} key={nav.name}>
+                        <button className="font-semibold text-lg text-black capitalize" onClick={() => router.push(nav.hash)} key={nav.name}>
                             {nav.name}
                         </button>
                     ))}
