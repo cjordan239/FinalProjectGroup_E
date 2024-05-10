@@ -33,7 +33,6 @@ const About = () => {
           sx={{
             display: "flex",
             flexDirection: "row",
-
           }}
           component="article">
           <Box
