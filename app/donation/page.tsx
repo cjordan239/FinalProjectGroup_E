@@ -11,7 +11,7 @@ const DonationPage: React.FC = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (isAuthenticated) {
       router.push('/login');
     }
   }, [isAuthenticated, router]);
